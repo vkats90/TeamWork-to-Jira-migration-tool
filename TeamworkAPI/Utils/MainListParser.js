@@ -1,5 +1,6 @@
 import { stripTags } from './stripTags.js'
 import { GetSharableURL } from './GetSharableURL.js'
+import config from '../../config.json' assert { type: 'json' }
 
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms))
 
@@ -78,9 +79,7 @@ export const MainListParser = async (data) => {
     users: users,
     projects: [
       {
-        name: 'Merch - Product Description Needed',
-        //key: 'PDN',
-        //description: 'Merch - Product Description Needed',
+        name: config.projectName,
         issues: tasks,
       },
     ],
