@@ -3,8 +3,8 @@ import 'dotenv/config'
 import fs from 'fs'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
-import config from '../config.json'
 
+const config = JSON.parse(fs.readFileSync(new URL('./config.json', import.meta.url), 'utf8'))
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 

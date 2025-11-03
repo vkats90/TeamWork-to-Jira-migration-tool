@@ -1,0 +1,16 @@
+{
+  "name": "teamworkapi",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "TeamworkAPI.js",
+  "scripts": {
+    "start": "rm -rf ./output && node TeamworkAPI.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {}
+}

@@ -1,7 +1,8 @@
 import { stripTags } from './stripTags.js'
 import { GetSharableURL } from './GetSharableURL.js'
-import config from '../../config.json' assert { type: 'json' }
+import fs from 'fs'
 
+const config = JSON.parse(fs.readFileSync(new URL('../config.json', import.meta.url), 'utf8'))
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms))
 
 export const MainListParser = async (data) => {
@@ -48,7 +49,7 @@ export const MainListParser = async (data) => {
 
     tasks.push({
       externalId: task.id,
-      workType: 'Sub-task',
+      workType: 'Task',
       summary: task.name,
       description: task.description,
       status:
@@ -62,7 +63,7 @@ export const MainListParser = async (data) => {
         data.included.users[task.assignees[0]?.id]?.firstName +
         ' ' +
         data.included.users[task.assignees[0]?.id]?.lastName,
-      fixedVersions: ['1.0'],
+      //fixedVersions: ['1.0'],
       comments,
       attachments,
     })

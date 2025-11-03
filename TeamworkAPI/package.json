@@ -1,9 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "dotenv": "^17.2.3"
-  },
-  "scripts": {
-    "start": "rm -rf ./output && node TeamworkAPI.js"
-  }
-}
